@@ -1,42 +1,27 @@
 "use client";
 
-import { useEffect } from "react";
+import { GameInput } from "@/components/blocks/game-input";
+import { GameLoader } from "@/components/blocks/game-loader";
+import { GameMessage } from "@/components/blocks/game-message";
+import { useZombieGame } from "@/hooks/use-zombie-game";
 
 export default function Page() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/api/generate-story", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userMessage: "I want to go to the store",
-          conversationHistory: [],
-          isStart: true,
-        }),
-      });
-
-      const { narrative, imagePrompt } = await response.json();
-
-      console.log("Narrative:", narrative);
-
-      fetch("/api/generate-image", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          imagePrompt,
-        }),
-      })
-        .then((res) => res.json())
-        .then(console.log);
-    };
-
-    fetchData();
-  }, []);
+  const { messages, input, isLoading, handleInputChange, handleSubmit } =
+    useZombieGame();
   return (
-    <div className="font-sans min-h-screen p-8 ">zombie apocalypse game</div>
+    <div className="font-sans min-h-screen p-8 max-w-xl mx-auto">
+      <div className="">
+        {messages.map((message) => (
+          <GameMessage key={message.id} message={message} />
+        ))}
+      </div>
+      {isLoading && <GameLoader />}
+      <GameInput
+        input={input}
+        onInputChange={handleInputChange}
+        onSubmit={handleSubmit}
+        isLoading={isLoading}
+      />
+    </div>
   );
 }
