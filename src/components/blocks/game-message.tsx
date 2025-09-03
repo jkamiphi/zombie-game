@@ -10,25 +10,26 @@ export function GameMessage({ message }: { message: GameMessageType }) {
   return (
     <Message from={role}>
       <MessageContent>
-        <picture className="w-full max-w-2xl aspect-video overflow-hidden rounded-md">
-          {imageLoading && (
-            <div className="w-full flex items-center justify-center h-full bg-black/30">
-              <Loader />
-              <span>{UI_MESSAGES.LOADING.IMAGE}</span>
-            </div>
-          )}
+        {role !== "user" && (
+          <picture className="flex justify-center items-center max-w-2xl aspect-video overflow-hidden rounded-md">
+            {imageLoading && (
+              <div className="w-full flex items-center justify-center h-full bg-black/30">
+                <Loader />
+                <span>{UI_MESSAGES.LOADING.IMAGE}</span>
+              </div>
+            )}
 
-          {image && (
-            <Image
-              base64={image.base64Data}
-              mediaType={image.mediaType}
-              alt="zombie apocalypse pixel art image"
-              className="w-full h-auto object-cover object-center"
-              uint8Array={new Uint8Array()}
-            />
-          )}
-        </picture>
-
+            {image && (
+              <Image
+                base64={image.base64Data}
+                mediaType={image.mediaType}
+                alt="zombie apocalypse pixel art image"
+                className="mx-auto max-w-md h-auto object-cover object-center"
+                uint8Array={new Uint8Array()}
+              />
+            )}
+          </picture>
+        )}
         <Response>{content}</Response>
       </MessageContent>
     </Message>
