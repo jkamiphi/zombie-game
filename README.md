@@ -1,6 +1,6 @@
 # Zombie Game
 
-![Site Screenshot](screenshots/site-preview.png)
+![Site Screenshot](screenshots/site-preview.jpeg)
 
 # Zombie Game
 
