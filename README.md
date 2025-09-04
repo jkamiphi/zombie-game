@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zombie Game
+
+![Site Screenshot](screenshots/site-preview.png)
+
+# Zombie Game
+
+Zombie Game is an interactive web-based adventure built with [Next.js](https://nextjs.org). Players navigate a branching story, make decisions, and face challenges in a world overrun by zombies. The game features dynamic storytelling, AI-generated images, and a modern UI for an engaging experience.
+
+## Features
+
+- Branching narrative with multiple story paths and endings
+- AI-generated story and images for unique playthroughs
+- Interactive decision-making and game input
+- Modern, responsive UI components
+- Built with Next.js, TypeScript, and modular architecture
+
+## Project Structure
+
+- `src/app/` — Main app, API routes for story and image generation
+- `src/components/` — UI and game components (blocks, shared, ui)
+- `src/hooks/` — Custom React hooks (e.g., game logic)
+- `src/lib/` — Constants, prompts, types, and utility functions
+- `public/` — Static assets and SVGs
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser to play the game.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Start the game and follow the story prompts.
+2. Make decisions to influence the outcome.
+3. Enjoy AI-generated images and dynamic storytelling.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js
+- TypeScript
+- AI APIs for story and image generation
+- Custom UI components
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please open issues or submit pull requests for improvements or new features.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License.
+
+
